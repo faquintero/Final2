@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Final.Classes.Item>
+
+
+</br>
+<form method="get">
+   @*<input type="search" name="itemText" />
+      @Html.EditorFor(model => model.userPassword, new { htmlAttributes = new { @class = "form-control" } })*@
+
+   @Html.Editor("itemText", new { htmlAttributes = new { @class = "form-control" } })
+
+   <span class="form-group">
+      <span class="col-md-offset-2 col-md-10">
+         <input type="submit" value="Search" class="btn btn-default" />
+      </span>
+   </span>
+</form>
+
+<table class="table">
+   <tr>
+      <th>
+         @Html.DisplayNameFor(model => model.itemName)
+      </th>
+      <th>
+         @Html.DisplayNameFor(model => model.itemDescription)
+      </th>
+      <th>
+         @Html.DisplayNameFor(model => model.itemPrice)
+      </th>
+   </tr>
+@foreach (var item in Model)
+{
+   <tr>
+      <td>
+         @Html.DisplayFor(modelItem => item.itemName)
+      </td>
+      <td>
+         @Html.DisplayFor(modelItem => item.itemDescription)
+      </td>
+      <td>
+         @Html.DisplayFor(modelItem => item.itemPrice)
+      </td>
+   </tr>
+}
+</table>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
