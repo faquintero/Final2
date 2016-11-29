@@ -125,7 +125,7 @@ namespace Final.DAL
             {
                cmd.Parameters.Add(new SqlParameter() { ParameterName = "@text", DbType = System.Data.DbType.String, Value = itemText });
 
-               using (SqlDataReader reader = cmd.ExecuteReader(System.Data.CommandBehavior.SingleRow))
+               using (SqlDataReader reader = cmd.ExecuteReader(System.Data.CommandBehavior.SingleResult))
                {
                   while(reader.Read())
                   {

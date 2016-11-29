@@ -8,8 +8,11 @@ namespace Final.Classes
 {
    public class UserAccount
    {
+      [Display(Name = "User Name")]
       public string userName { get; set; }
+      [Display(Name = "User Password")]
       public string userPassword { get; set; }
+      [Display(Name = "Is Logged")]
       public string loggedIn { get; set; }
    }
 
@@ -26,6 +29,8 @@ namespace Final.Classes
             userAccount.loggedIn = "S";
             dal.SaveUser(userAccount);
          }
+         else
+            throw new Exception("Invalid user or password");
       }
 
       public void Logout(UserAccount userAccount)
